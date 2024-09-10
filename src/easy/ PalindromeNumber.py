@@ -93,9 +93,6 @@ class Solution:
                 else:
                     zero_suffix = False
 
-            print(former)
-            print(latter)
-
             if int(former) == int(self.reverse_integer(n = latter)) :
                 return True
             else:
