@@ -24,6 +24,33 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 """
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        if len(s) == 0:
+            return 0
+        if len(s) == 1:
+            return 1
+
+        left = 0
+        right = 1
+        hashtable = defaultdict(int)
+        hashtable[s[left]] += 1
+        max_len = 0
+
+        while right < len(s) and left < len(s):
+
+            if hashtable.get(s[right], 0) != 0 : # repeated string encounter
+                hashtable[s[left]] -= 1
+                left += 1
+            else:
+                hashtable[s[right]] += 1
+                right += 1
+
+            max_len = max(max_len, right - left)
+        
+        return max_len
+    
+    
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
         
         len_s = len(s)
         
