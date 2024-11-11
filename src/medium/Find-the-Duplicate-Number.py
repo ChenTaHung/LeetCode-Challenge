@@ -46,4 +46,4 @@ class Solution:
             else:
                 check_arr[n-1] += 1
         
-        return -1
+        return -1      
