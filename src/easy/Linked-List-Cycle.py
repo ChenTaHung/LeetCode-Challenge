@@ -61,3 +61,23 @@ class Solution:
                 h = h.next
         
         return False 
+    
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        if not head :
+            return False
+
+        h = head
+        f = h.next # fast
+        s = h # slow
+
+        while f and s and f.next:
+            if f == s:
+                return True
+            else:
+                s = s.next
+                f = f.next.next
+                
+        
+        return False
